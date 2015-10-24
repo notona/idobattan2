@@ -12,7 +12,7 @@ electron .
 
 ```
 
-## release
+## packaging release build
 ```
-npm install -g asar
+npm run-script package
 ```
