@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+    <title>idobattan2</title>
+	<script src="lib/superagent.js"></script>
+	<script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+  </head>
+  <body style="height:100%;width:100%;margin:0px;padding:0px;">
+		<div style="width:100%; height:100%;">
+			<webview src="https://idobata.io" id="webview_id"></webview>
+		</div>
+  </body>
+  <script>
+	var webview = document.getElementById('webview_id');
+		webview.addEventListener('new-window', function(e) {
+		require('shell').openExternal(e.url);
+	});
+	
+	var remote = require('remote');
+	var NotifiyUtil = remote.require('./NotifiyUtil');
+	
+	var request = window.superagent;
+	request
+	.get('https://idobata.io/api/seed')
+	.end(function(err, res){
+		//console.log(res.body);
+		var channel_name = res.body.records.user.channel_name;
+		console.log(channel_name);
+		
+		var idobataUrl = 'https://idobata.io/';
+		var pusherKey = '44ffe67af1c7035be764';
+		
+		var pusher = new Pusher(pusherKey, {
+			encrypted: /^https/.test(idobataUrl),
+			authEndpoint: idobataUrl + '/pusher/auth',
+			auth: {
+				headers: {
+					'User-Agent': "Mozilla/5.0"
+				}
+			}
+		});
+		channel = pusher.subscribe(channel_name);
+		channel.bind('message:created', function(arg) {
+			//console.log(arg);
+			var message = arg.message;
+	
+			if (message.body_plain.indexOf('@all') !== -1 || message.body_plain.indexOf('@here') !== -1) {
+				NotifiyUtil.notify(
+					message.sender_name,
+					message.body_plain,
+					message.sender_icon_url
+				);
+			}
+			/*
+			request
+				.get(message.sender_icon_url)
+				.end(function(err, res){
+					console.log(res);
+					NotifiyUtil.notify(
+						message.sender_name,
+						message.body_plain,
+						res.text
+					);
+				});*/
+		});
+		
+		
+	});
+	</script>
+</html>
