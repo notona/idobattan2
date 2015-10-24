@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "package": "electron-packager ./ idobattan2 --platform=win32,darwin --arch=all --out ./build/idobattan2 --version 0.34.1 --overwrite "
+    "win": "electron-packager ./ idobattan2 --platform=win32 --arch=all --out ./build/idobattan2 --version 0.34.1 --overwrite --icon=./idobattan_icon.ico",
+    "mac": "electron-packager ./ idobattan2 --platform=darwin --arch=all --out ./build/idobattan2 --version 0.34.1 --overwrite --icon=./idobattan_icon.icns"
   },
   "keywords": [],
   "author": "",
