@@ -11,3 +11,8 @@ npm install
 electron .
 
 ```
+
+## release
+```
+npm install -g asar
+```
