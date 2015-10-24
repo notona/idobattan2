@@ -1,5 +1,7 @@
 # idobattan2
 idobata client
+![screenshot1](https://raw.githubusercontent.com/notona/idobattan2/master/screenshot1.png)
+![screenshot1](https://raw.githubusercontent.com/notona/idobattan2/master/screenshot2.png)
 
 ## for Users
 Download Binary From here !
