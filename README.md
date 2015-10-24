@@ -9,7 +9,6 @@ cd idobattan2
 npm install 
 
 electron .
-
 ```
 
 ## packaging release build
