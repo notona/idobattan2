@@ -2,7 +2,7 @@
 idobata client
 
 ## for Users
-### Download Binary From here !
+Download Binary From here !
 [release tag page](https://github.com/notona/idobattan2/releases)
 
 ## for developers
