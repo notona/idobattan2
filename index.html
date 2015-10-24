@@ -32,11 +32,7 @@
 		
 		var pusher = new Pusher(pusherKey, {
 			encrypted: /^https/.test(idobataUrl),
-			authEndpoint: idobataUrl + '/pusher/auth',
-			auth: {
-				headers: {
-					'User-Agent': "Mozilla/5.0"
-				}
+			authEndpoint: idobataUrl + '/pusher/auth'
 			}
 		});
 		channel = pusher.subscribe(channel_name);
@@ -51,17 +47,6 @@
 					message.sender_icon_url
 				);
 			}
-			/*
-			request
-				.get(message.sender_icon_url)
-				.end(function(err, res){
-					console.log(res);
-					NotifiyUtil.notify(
-						message.sender_name,
-						message.body_plain,
-						res.text
-					);
-				});*/
 		});
 		
 		
