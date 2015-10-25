@@ -3,6 +3,7 @@ idobata client based on the [electron](https://github.com/atom/electron)
 
 ## for Users
 Download Binary From here !
+[release tag page](https://github.com/notona/idobattan2/releases)
 
 ## screenshots
 ![screenshot1](https://raw.githubusercontent.com/notona/idobattan2/master/screenshot1.png)
@@ -10,7 +11,6 @@ Download Binary From here !
 
 
 
-[release tag page](https://github.com/notona/idobattan2/releases)
 
 ## for developers
 ```
