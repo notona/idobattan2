@@ -44,3 +44,6 @@ cd build/idobattan2/idobattan2-darwin-x64
 ```
 ./node_modules/electron-packager/cli.js ./ idobattan2 --platform=linux --arch=all --out ./build/idobattan2 --version 0.34.1 --overwrite --icon=./idobattan_icon.ico
 ```
+
+## Licence
+The MIT License
