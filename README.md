@@ -1,10 +1,14 @@
 # idobattan2
-idobata client
-![screenshot1](https://raw.githubusercontent.com/notona/idobattan2/master/screenshot1.png)
-![screenshot1](https://raw.githubusercontent.com/notona/idobattan2/master/screenshot2.png)
+idobata client based on the [electron](https://github.com/atom/electron)
 
 ## for Users
 Download Binary From here !
+
+## screenshots
+![screenshot1](https://raw.githubusercontent.com/notona/idobattan2/master/screenshot1.png)
+![screenshot1](https://raw.githubusercontent.com/notona/idobattan2/master/screenshot2.png)
+
+
 
 [release tag page](https://github.com/notona/idobattan2/releases)
 
