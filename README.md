@@ -41,7 +41,7 @@ cd build/idobattan2/idobattan2-win32-x64
 npm run-script mac
 
 # here is build result
-cd build/idobattan2/idobattan2-darwin-x64
+cd build/idobattan2/idobattan2-darwin-x64/idobattan2.app/Contents/Resources/app/build/idobattan2/idobattan2-darwin-x64.zip
 ```
 
 ### linux(may be works. i didn't check it)
