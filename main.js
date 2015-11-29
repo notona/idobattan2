@@ -5,7 +5,6 @@ var path = require("path");
 var fs = require("fs");
 var BrowserWindow = require('browser-window');
 
-
 require('crash-reporter').start();
 
 var mainWindow = null;
@@ -43,9 +42,15 @@ app.on('ready', function() {
     mainWindow = null;
   });
     
-  mainWindow.loadUrl('file://' + __dirname + '/index.html'); 
+  mainWindow.loadURL('file://' + __dirname + '/index.html'); 
 
   setApplicationMenu();
+
+  // sleep から復帰した時に webview をリロードしないと
+  // 別のルームに切り替えられなかったりする
+  require('electron').powerMonitor.on('resume', function() {
+    mainWindow.reload();
+  });
 });
 
 function setApplicationMenu (){
