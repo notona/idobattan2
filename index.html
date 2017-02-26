@@ -23,9 +23,7 @@
 	request
 	.get('https://idobata.io/api/seed')
 	.end(function(err, res){
-		//console.log(res.body);
 		var channel_name = res.body.records.user.channel_name;
-		//console.log(channel_name);
 		
 		var idobataUrl = 'https://idobata.io/';
 		var pusherKey = '44ffe67af1c7035be764';
@@ -36,7 +34,6 @@
 		});
 		channel = pusher.subscribe(channel_name);
 		channel.bind('message:created', function(arg) {
-			//console.log(arg);
 			var message = arg.message;
 	
 			if (message.body_plain.indexOf('@all') !== -1 || message.body_plain.indexOf('@here') !== -1) {
